@@ -4,11 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'punch-list'
-  },
-  {
-    path: 'punch-list',
     loadChildren: './components/punch/punch.module#PunchModule'
   }
   
