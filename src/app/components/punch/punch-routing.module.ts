@@ -5,15 +5,10 @@ import { PunchComponent } from './punch.component';
 const routes: Routes = [
     {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'punch-list'
-    },
-    {
-        path: 'punch-list',
         component: PunchComponent
     },
     {
-        path: 'punch-list/:trade',
+        path: ':trade',
         pathMatch: 'full',
         component: PunchComponent
     }
