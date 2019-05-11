@@ -8,7 +8,7 @@ const routes: Routes = [
         component: PunchComponent
     },
     {
-        path: '',
+        path: '**',
         component: PunchComponent
     }
 ];
