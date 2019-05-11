@@ -4,7 +4,7 @@ import { PunchComponent } from './punch.component';
 
 const routes: Routes = [
     {
-        path: 'punch-list/:trade',
+        path: '**/:trade',
         component: PunchComponent
     },
     {
