@@ -1,0 +1,21 @@
+<map-box></map-box>
+<div class="flex-punch" *ngIf="!noTrade">
+  <button (click)="prevPunch()">&#8701;</button>
+  <div *ngFor="let punch of punchList" class="punch {{punch.selected}}">
+    <h2>
+      Task: {{ punch.task }}
+      <span class="severity {{ punch.severity.toLowerCase() }}"> ({{ punch.severity }}&nbsp;Severity)</span>
+    </h2>
+    <p class="createdBy">Created by: {{punch.creator}} on {{ punch.createdOn | date }}</p>
+    <p class="worker">Working on it: {{ punch.worker }} - {{ punch.trade }}</p>
+    <div class="stateDue">
+      <span class="taskState {{punch.taskState.toLowerCase()}}">State: {{ punch.taskState }}</span>
+      <span class="dueDate">Due: {{ punch.due | date }}</span>
+    </div>
+    
+  </div>
+  <button (click)="nextPunch()">&#8702;</button>
+</div>
+<div class="no-trade" *ngIf="noTrade">
+  <span>No tasks for that trade found.</span>
+</div>

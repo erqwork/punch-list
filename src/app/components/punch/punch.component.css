@@ -1,0 +1,127 @@
+.flex-punch {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-content: center;
+    height: 33vh;
+}
+
+.flex-punch * {
+    box-sizing: border-box;
+}
+
+.flex-punch button {
+    display: block;
+    background: #1c75df;
+    color: #eaf4ff;
+    font-size: 1rem;
+    border: 0;
+    flex-basis: 4%;
+    cursor: pointer;
+}
+
+.flex-punch button:active {
+    background: #1363c5;
+    box-shadow: inset 4px 4px 2px -1px rgba(0, 0, 0, 0.2);
+    outline: 0;
+}
+
+.punch {
+    display: none;
+    background: radial-gradient(circle, #2d96ff 80%, #1c75df);
+    color: #eaf4ff;
+    width: 100%;
+    padding: 1vw;
+    box-sizing: border-box;
+}
+
+.punch.selected {
+    display: block;
+}
+
+.punch h2 {
+    font-size: 2rem;
+}
+
+.punch h2 .severity {
+    font-size: 0.75rem;
+    vertical-align: middle;
+    padding: 0.2vw 2vw;
+}
+
+.punch h2 .severity.high {
+    background: red;
+    border-radius: 6px;
+}
+
+.stateDue {
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 0.75rem;
+    margin: 0.4vw 0;
+}
+
+.taskState {
+    margin-right: 1vw;
+    padding: 0.5vw 1vw;
+}
+
+.dueDate {
+    padding: 0.5vw 1vw;
+}
+
+.blocked {
+    background: red;
+    border-radius: 6px;
+}
+
+.in.progress {
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+    padding-left: 0;
+}
+
+.complete {
+    background: green;
+    border-radius: 6px;
+}
+
+.createdBy {
+    font-size: 0.5rem;
+    line-height: 2;
+}
+
+.no-trade {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: radial-gradient(circle, #2d96ff 80%, #1c75df);
+    color: #eaf4ff;
+    height: 33vh;
+}
+
+@media screen and (max-width: 768px) {
+    .flex-punch button {
+        flex-basis: 10%;
+        font-size: 4rem;
+    }
+    .punch h2 {
+        font-size: 3.6rem;
+    }
+    .punch h2 .severity {
+        font-size: 1.25rem;
+    }
+
+    .createdBy {
+        font-size: 1.5rem;
+    }
+
+    .worker {
+        font-size: 2.5rem;
+    }
+
+    .stateDue {
+        font-size: 2rem;
+    }
+}
