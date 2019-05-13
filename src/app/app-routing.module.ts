@@ -6,10 +6,6 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'punch-list'
-  },
-  {
-    path: 'punch-list',
     component: PunchComponent
   },
   {
