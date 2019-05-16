@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { PunchService } from '../../services/punch.service';
 import { Punch } from '../../models/punch';
+import { MapComponent } from '../map/map.component';
 
 @Component({
   selector: 'punch-list',
@@ -10,10 +11,11 @@ import { Punch } from '../../models/punch';
   providers: [ PunchService ]
 })
 export class PunchComponent implements OnInit {
+  @ViewChild('map') theMap: MapComponent;
   selectedPunch: string;
   punchList: Punch[];
   noTrade = false;
-  
+    
   constructor(private _punchServ: PunchService, private _route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -65,5 +67,4 @@ export class PunchComponent implements OnInit {
   removeSpaces(spaceyStr: string) {
     spaceyStr = spaceyStr.replace(/\s+/g, '');
   }
-
 }

@@ -39,17 +39,28 @@
     display: block;
 }
 
-.punch h2 {
+.taskHeader {
     font-size: 2rem;
+    display: inline;
 }
 
-.punch h2 .severity {
+.taskHeader:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.severity:hover {
+    text-decoration: none;
+    cursor: default;
+}
+
+.taskHeader .severity {
     font-size: 0.75rem;
     vertical-align: middle;
     padding: 0.2vw 2vw;
 }
 
-.punch h2 .severity.high {
+.taskHeader .severity.high {
     background: red;
     border-radius: 6px;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MapboxService } from '../../services/mapbox.service';
 import { PunchService } from '../../services/punch.service';
 import { Punch } from '../../models/punch';
@@ -19,6 +19,7 @@ export class MapComponent implements OnInit {
   source: any;
   punches: any;
   currentLoc: any;
+  @Input('punchCoords') punchToFlyTo: Punch;
 
   constructor(private _mapServ: MapboxService, private _punchServ: PunchService) { }
 
@@ -103,11 +104,18 @@ export class MapComponent implements OnInit {
 
   }
 
-  public flyTo(data: GeoJson) {
+  private flyTo(data: GeoJson) {
     this.map.flyTo({
       center: data.geometry.coordinates,
       zoom: 16
     })
+  }
+
+  public clickedFlyTo(punchCoords: string[]) {
+    this.map.flyTo({
+      center: punchCoords,
+      zoom: 16
+    });
   }
 
 }
