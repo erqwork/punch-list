@@ -54,13 +54,13 @@
     cursor: default;
 }
 
-.taskHeader .severity {
+.severity {
     font-size: 0.75rem;
     vertical-align: middle;
     padding: 0.2vw 2vw;
 }
 
-.taskHeader .severity.high {
+.severity.high {
     background: red;
     border-radius: 6px;
 }
