@@ -22,7 +22,6 @@ export class PunchComponent implements OnInit {
     this._route.paramMap.subscribe(params => {
       let trade = params.get('trade');
       if(trade) {
-        console.log('if task: ', trade);        
         let filteredPunches = this._punchServ.getPunches()
             .filter(punch => punch.trade.toLowerCase() === trade);
         
