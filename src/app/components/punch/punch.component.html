@@ -5,7 +5,7 @@
     <h2 class="taskHeader" (click)="theMap.clickedFlyTo([punch.long, punch.lat])">
       Task: {{ punch.task }}
     </h2>
-    <span class="severity {{ punch.severity.toLowerCase() }}">({{ punch.severity }}&nbsp;Severity)</span>
+    <span class="severity {{ punch.severity.toLowerCase() }}" (click)="sevChange()">({{ punch.severity }}&nbsp;Severity)</span>
     <p class="createdBy">Created by: {{punch.creator}} on {{ punch.createdOn | date }}</p>
     <p class="worker">Working on it: {{ punch.worker }} - {{ punch.trade }}</p>
     <div class="stateDue">

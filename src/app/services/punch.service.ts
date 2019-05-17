@@ -26,4 +26,16 @@ export class PunchService {
     const selected = this.punchList.filter(punch => punch.selected === 'selected');
     return selected[0].id;
   }
+
+  sevChange() {
+    let sPunch = this.getSelectedPunch();
+    
+    if (sPunch.severity === 'Medium') {
+      sPunch.severity = 'High';
+    } else if (sPunch.severity === 'High') {
+      sPunch.severity = 'Low'; 
+    } else if (sPunch.severity === 'Low') {
+      sPunch.severity = 'Medium'; 
+    }
+  }
 }

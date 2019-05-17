@@ -66,4 +66,8 @@ export class PunchComponent implements OnInit {
   removeSpaces(spaceyStr: string) {
     spaceyStr = spaceyStr.replace(/\s+/g, '');
   }
+
+  sevChange(punch: Punch) {
+    this._punchServ.sevChange();
+  }
 }
